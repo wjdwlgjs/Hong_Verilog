@@ -1,0 +1,1 @@
+This repository is an archive of all my Verilog practices and homeworks done for the 2024 Spring EE36100 Lecture by Professor Hong.
