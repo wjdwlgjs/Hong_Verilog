@@ -26,49 +26,63 @@ module ALU_tb();
         $dumpvars(0, ALU_tb);
         $monitor("$time: %0d, a: %0d, b: %0d, opcode: %b, result: %0d, ans: %0d, overflow: %b, shiftval: %0d", $time, tb_source_val, tb_target_val, tb_opcode, tb_result, actual_result, tb_overflow, tb_shiftval);
         
+        tb_shiftval = 0;
+        // test add operation
+        tb_source_val = $random;
+        tb_target_val = $random;
+        tb_opcode = 3'b000;
+        actual_result = tb_source_val + tb_target_val;
+
+        #20 // test sub operation
+        tb_source_val = $random;
+        tb_target_val = $random;
+        tb_opcode = 3'b001;
+        actual_result = tb_source_val - tb_target_val;
+
+        #20 // test add operation with overflow
         tb_source_val = -1073741829;
         tb_target_val = -1073741829;
         tb_opcode = 3'b000;
         actual_result = tb_source_val + tb_target_val;
 
-        #20
+        #20 // test sub operation with overflow
         tb_source_val = -1073741829;
         tb_target_val = 1073741829;
         tb_opcode = 3'b001;
         actual_result = tb_source_val - tb_target_val;
 
-        #20
+        #20 // test bitwise AND operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b010;
         actual_result = tb_source_val & tb_target_val;
 
-        #20
+        #20 // test bitwise OR operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b011;
         actual_result = tb_source_val | tb_target_val;
 
-        #20
+        #20 // test bitwise XOR operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b100;
         actual_result = tb_source_val ^ tb_target_val;
 
-        #20
+        #20 // test not A operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b101;
         actual_result = ~tb_source_val;
 
-        #20
+        #20 // test shift by B operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b110;
         tb_shiftval = tb_target_val[5:0];
         actual_result = tb_source_val << tb_shiftval;
 
-        #20
+        #20 // unassigned operation
         tb_source_val = $random;
         tb_target_val = $random;
         tb_opcode = 3'b111;
