@@ -1,0 +1,125 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk_i'
+Slack : -4.585
+TNS   : -80.350
+
+Type  : Slow Model Setup 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow Model Setup 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : 0.990
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clk_i'
+Slack : -2.465
+TNS   : -23.990
+
+Type  : Slow Model Hold 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -0.720
+TNS   : -0.720
+
+Type  : Slow Model Hold 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : -2.869
+TNS   : -2.869
+
+Type  : Slow Model Recovery 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -2.863
+TNS   : -2.863
+
+Type  : Slow Model Recovery 'clk_i'
+Slack : -1.618
+TNS   : -1.618
+
+Type  : Slow Model Removal 'clk_i'
+Slack : -1.393
+TNS   : -13.733
+
+Type  : Slow Model Removal 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow Model Removal 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk_i'
+Slack : -1.222
+TNS   : -39.222
+
+Type  : Slow Model Minimum Pulse Width 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Slow Model Minimum Pulse Width 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Setup 'clk_i'
+Slack : -1.632
+TNS   : -27.346
+
+Type  : Fast Model Setup 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.665
+TNS   : 0.000
+
+Type  : Fast Model Setup 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : 0.793
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk_i'
+Slack : -1.511
+TNS   : -21.506
+
+Type  : Fast Model Hold 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -0.413
+TNS   : -0.413
+
+Type  : Fast Model Hold 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : -1.170
+TNS   : -1.170
+
+Type  : Fast Model Recovery 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -1.166
+TNS   : -1.166
+
+Type  : Fast Model Recovery 'clk_i'
+Slack : -0.568
+TNS   : -0.568
+
+Type  : Fast Model Removal 'clk_i'
+Slack : -0.960
+TNS   : -9.880
+
+Type  : Fast Model Removal 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : 0.138
+TNS   : 0.000
+
+Type  : Fast Model Removal 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk_i'
+Slack : -1.222
+TNS   : -39.222
+
+Type  : Fast Model Minimum Pulse Width 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit|q_o'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit|q_o'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

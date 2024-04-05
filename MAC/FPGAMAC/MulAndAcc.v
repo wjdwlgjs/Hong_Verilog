@@ -1,6 +1,3 @@
-`include "MAC/SubModules/SequentialMultiplier.v"
-`include "MAC/SubModules/Accumulator16Bit.v"
-
 module MulAndAcc(
     input [4:0] mac_multiplicand_i,
     input [4:0] mac_multiplier_i,
@@ -9,7 +6,8 @@ module MulAndAcc(
     
     output [15:0] mac_result_o,
     output updating_acc_result_o, // when this turns into 1 at a clk falling edge, the accumulator's output will be updated at the following rising edge 
-    output fetching_input_o // input values will be read at a clk rising edge when this is 1. It is OK to change the inputs when this is 0
+    output fetching_input_o, // input values will be read at a clk rising edge when this is 1. It is OK to change the inputs when this is 0
+    output [2:0] mul_status_count_o
     );
 
 
@@ -23,7 +21,8 @@ module MulAndAcc(
         .mul_nreset_i(mac_nreset_i),
         .mul_result_o(mul_output),
         .is_result_o(updating_acc_result_o),
-        .mul_fetching_input_o(fetching_input_o)
+        .mul_fetching_input_o(fetching_input_o),
+        .status_count_o(mul_status_count_o)
     );
 
     Accumulator16Bit main_accumulator( // update final result when multiplier is done at rising edge

@@ -1,0 +1,1042 @@
+|FPGAMAC
+multiplicand_i[0] => multiplicand_i[0].IN1
+multiplicand_i[1] => multiplicand_i[1].IN1
+multiplicand_i[2] => multiplicand_i[2].IN1
+multiplicand_i[3] => multiplicand_i[3].IN1
+multiplicand_i[4] => multiplicand_i[4].IN1
+multiplier_i[0] => multiplier_i[0].IN1
+multiplier_i[1] => multiplier_i[1].IN1
+multiplier_i[2] => multiplier_i[2].IN1
+multiplier_i[3] => multiplier_i[3].IN1
+multiplier_i[4] => multiplier_i[4].IN1
+clk_i => _.IN1
+clk_i => clk_o.DATAIN
+nreset_i => nreset_i.IN1
+result_o[0] <= MulAndAcc:main_mac.mac_result_o
+result_o[1] <= MulAndAcc:main_mac.mac_result_o
+result_o[2] <= MulAndAcc:main_mac.mac_result_o
+result_o[3] <= MulAndAcc:main_mac.mac_result_o
+result_o[4] <= MulAndAcc:main_mac.mac_result_o
+result_o[5] <= MulAndAcc:main_mac.mac_result_o
+result_o[6] <= MulAndAcc:main_mac.mac_result_o
+result_o[7] <= MulAndAcc:main_mac.mac_result_o
+result_o[8] <= MulAndAcc:main_mac.mac_result_o
+result_o[9] <= MulAndAcc:main_mac.mac_result_o
+result_o[10] <= MulAndAcc:main_mac.mac_result_o
+result_o[11] <= MulAndAcc:main_mac.mac_result_o
+result_o[12] <= MulAndAcc:main_mac.mac_result_o
+result_o[13] <= MulAndAcc:main_mac.mac_result_o
+result_o[14] <= MulAndAcc:main_mac.mac_result_o
+result_o[15] <= MulAndAcc:main_mac.mac_result_o
+updating_acc_result_o <= MulAndAcc:main_mac.updating_acc_result_o
+fetching_input_o <= MulAndAcc:main_mac.fetching_input_o
+clk_o <= clk_i.DB_MAX_OUTPUT_PORT_TYPE
+count_o[0] <= MulAndAcc:main_mac.mul_status_count_o
+count_o[1] <= MulAndAcc:main_mac.mul_status_count_o
+count_o[2] <= MulAndAcc:main_mac.mul_status_count_o
+
+
+|FPGAMAC|MulAndAcc:main_mac
+mac_multiplicand_i[0] => mac_multiplicand_i[0].IN1
+mac_multiplicand_i[1] => mac_multiplicand_i[1].IN1
+mac_multiplicand_i[2] => mac_multiplicand_i[2].IN1
+mac_multiplicand_i[3] => mac_multiplicand_i[3].IN1
+mac_multiplicand_i[4] => mac_multiplicand_i[4].IN1
+mac_multiplier_i[0] => mac_multiplier_i[0].IN1
+mac_multiplier_i[1] => mac_multiplier_i[1].IN1
+mac_multiplier_i[2] => mac_multiplier_i[2].IN1
+mac_multiplier_i[3] => mac_multiplier_i[3].IN1
+mac_multiplier_i[4] => mac_multiplier_i[4].IN1
+mac_clk_i => mac_clk_i.IN2
+mac_nreset_i => mac_nreset_i.IN2
+mac_result_o[0] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[1] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[2] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[3] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[4] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[5] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[6] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[7] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[8] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[9] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[10] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[11] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[12] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[13] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[14] <= Accumulator16Bit:main_accumulator.acc_result_o
+mac_result_o[15] <= Accumulator16Bit:main_accumulator.acc_result_o
+updating_acc_result_o <= updating_acc_result_o.DB_MAX_OUTPUT_PORT_TYPE
+fetching_input_o <= SequentialMultiplier:main_multiplier_module.mul_fetching_input_o
+mul_status_count_o[0] <= SequentialMultiplier:main_multiplier_module.status_count_o
+mul_status_count_o[1] <= SequentialMultiplier:main_multiplier_module.status_count_o
+mul_status_count_o[2] <= SequentialMultiplier:main_multiplier_module.status_count_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module
+multiplicand_i[0] => multiplicand_i[0].IN1
+multiplicand_i[1] => multiplicand_i[1].IN1
+multiplicand_i[2] => multiplicand_i[2].IN1
+multiplicand_i[3] => multiplicand_i[3].IN1
+multiplicand_i[4] => multiplicand_i[4].IN1
+multiplier_i[0] => multiplier_i[0].IN1
+multiplier_i[1] => multiplier_i[1].IN1
+multiplier_i[2] => multiplier_i[2].IN1
+multiplier_i[3] => multiplier_i[3].IN1
+multiplier_i[4] => multiplier_i[4].IN1
+mul_clk_i => mul_clk_i.IN5
+mul_nreset_i => mul_nreset_i.IN3
+mul_result_o[0] <= adder_operand_b[1].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[1] <= adder_operand_b[2].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[2] <= adder_operand_b[3].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[3] <= adder_operand_b[4].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[4] <= adder_operand_b[5].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[5] <= adder_operand_b[6].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[6] <= adder_operand_b[7].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[7] <= adder_operand_b[8].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[8] <= adder_operand_b[9].DB_MAX_OUTPUT_PORT_TYPE
+mul_result_o[9] <= RegisterPIPO10BitNeg:partial_sum_reg.pdo_o
+is_result_o <= is_result_o.DB_MAX_OUTPUT_PORT_TYPE
+mul_fetching_input_o <= mul_fetching_input_o.DB_MAX_OUTPUT_PORT_TYPE
+status_count_o[0] <= Counter3Bit:main_counter.count_o
+status_count_o[1] <= Counter3Bit:main_counter.count_o
+status_count_o[2] <= Counter3Bit:main_counter.count_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|PosedgeDFF:fetching_complete_checker
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter
+pulse_i => pulse_i.IN1
+count_nreset_i => count_nreset_i.IN3
+count_o[0] <= count_o[0].DB_MAX_OUTPUT_PORT_TYPE
+count_o[1] <= count_o[1].DB_MAX_OUTPUT_PORT_TYPE
+count_o[2] <= NegedgeDFF:dff_thirdbit.q_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_firstbit
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_secbit
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Counter3Bit:main_counter|NegedgeDFF:dff_thirdbit
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch
+pdi_i[0] => comb.IN0
+pdi_i[1] => comb.IN0
+pdi_i[2] => comb.IN0
+pdi_i[3] => comb.IN0
+pdi_i[4] => comb.IN0
+reg_clk_i => reg_clk_i.IN5
+reg_nreset_i => reg_nreset_i.IN5
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+shift_sel_i => comb.IN1
+sdo_o <= PosedgeDFF:piso5bit_dff_array[4].dff_inst.q_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch|PosedgeDFF:piso5bit_dff_array[0].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch|PosedgeDFF:piso5bit_dff_array[1].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch|PosedgeDFF:piso5bit_dff_array[2].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch|PosedgeDFF:piso5bit_dff_array[3].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPISO5Bit:multiplier_fetch|PosedgeDFF:piso5bit_dff_array[4].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch
+pdi_i[0] => comb.IN0
+pdi_i[1] => comb.IN0
+pdi_i[2] => comb.IN0
+pdi_i[3] => comb.IN0
+pdi_i[4] => comb.IN0
+reg_clk_i => reg_clk_i.IN5
+reg_nreset_i => reg_nreset_i.IN5
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdo_o[0] <= PosedgeDFF:pipo5bit_dff_array[0].dff_inst.q_o
+pdo_o[1] <= PosedgeDFF:pipo5bit_dff_array[1].dff_inst.q_o
+pdo_o[2] <= PosedgeDFF:pipo5bit_dff_array[2].dff_inst.q_o
+pdo_o[3] <= PosedgeDFF:pipo5bit_dff_array[3].dff_inst.q_o
+pdo_o[4] <= PosedgeDFF:pipo5bit_dff_array[4].dff_inst.q_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch|PosedgeDFF:pipo5bit_dff_array[0].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch|PosedgeDFF:pipo5bit_dff_array[1].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch|PosedgeDFF:pipo5bit_dff_array[2].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch|PosedgeDFF:pipo5bit_dff_array[3].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO5Bit:multiplicand_fetch|PosedgeDFF:pipo5bit_dff_array[4].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder
+a10_i[0] => a10_i[0].IN1
+a10_i[1] => a10_i[1].IN1
+a10_i[2] => a10_i[2].IN1
+a10_i[3] => a10_i[3].IN1
+a10_i[4] => a10_i[4].IN1
+a10_i[5] => a10_i[5].IN1
+a10_i[6] => a10_i[6].IN1
+a10_i[7] => a10_i[7].IN1
+a10_i[8] => a10_i[8].IN1
+a10_i[9] => a10_i[9].IN1
+b10_i[0] => b10_i[0].IN1
+b10_i[1] => b10_i[1].IN1
+b10_i[2] => b10_i[2].IN1
+b10_i[3] => b10_i[3].IN1
+b10_i[4] => b10_i[4].IN1
+b10_i[5] => b10_i[5].IN1
+b10_i[6] => b10_i[6].IN1
+b10_i[7] => b10_i[7].IN1
+b10_i[8] => b10_i[8].IN1
+b10_i[9] => b10_i[9].IN1
+cin10_i => carry[0].IN1
+sum10_o[0] <= SingleBitFA:fa_array_10bit[0].fa_inst.sum_o
+sum10_o[1] <= SingleBitFA:fa_array_10bit[1].fa_inst.sum_o
+sum10_o[2] <= SingleBitFA:fa_array_10bit[2].fa_inst.sum_o
+sum10_o[3] <= SingleBitFA:fa_array_10bit[3].fa_inst.sum_o
+sum10_o[4] <= SingleBitFA:fa_array_10bit[4].fa_inst.sum_o
+sum10_o[5] <= SingleBitFA:fa_array_10bit[5].fa_inst.sum_o
+sum10_o[6] <= SingleBitFA:fa_array_10bit[6].fa_inst.sum_o
+sum10_o[7] <= SingleBitFA:fa_array_10bit[7].fa_inst.sum_o
+sum10_o[8] <= SingleBitFA:fa_array_10bit[8].fa_inst.sum_o
+sum10_o[9] <= SingleBitFA:fa_array_10bit[9].fa_inst.sum_o
+cout10_o <= SingleBitFA:fa_array_10bit[9].fa_inst.cout_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[0].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[1].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[2].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[3].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[4].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[5].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[6].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[7].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[8].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|Adder10Bit:main_adder|SingleBitFA:fa_array_10bit[9].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg
+pdi_i[0] => comb.IN0
+pdi_i[1] => comb.IN0
+pdi_i[2] => comb.IN0
+pdi_i[3] => comb.IN0
+pdi_i[4] => comb.IN0
+pdi_i[5] => comb.IN0
+pdi_i[6] => comb.IN0
+pdi_i[7] => comb.IN0
+pdi_i[8] => comb.IN0
+pdi_i[9] => comb.IN0
+reg_clk_i => reg_clk_i.IN10
+reg_nreset_i => reg_nreset_i.IN10
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdo_o[0] <= NegedgeDFF:pipo10bit_dff_array[0].dff_inst.q_o
+pdo_o[1] <= NegedgeDFF:pipo10bit_dff_array[1].dff_inst.q_o
+pdo_o[2] <= NegedgeDFF:pipo10bit_dff_array[2].dff_inst.q_o
+pdo_o[3] <= NegedgeDFF:pipo10bit_dff_array[3].dff_inst.q_o
+pdo_o[4] <= NegedgeDFF:pipo10bit_dff_array[4].dff_inst.q_o
+pdo_o[5] <= NegedgeDFF:pipo10bit_dff_array[5].dff_inst.q_o
+pdo_o[6] <= NegedgeDFF:pipo10bit_dff_array[6].dff_inst.q_o
+pdo_o[7] <= NegedgeDFF:pipo10bit_dff_array[7].dff_inst.q_o
+pdo_o[8] <= NegedgeDFF:pipo10bit_dff_array[8].dff_inst.q_o
+pdo_o[9] <= NegedgeDFF:pipo10bit_dff_array[9].dff_inst.q_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[0].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[1].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[2].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[3].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[4].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[5].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[6].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[7].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[8].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|SequentialMultiplier:main_multiplier_module|RegisterPIPO10BitNeg:partial_sum_reg|NegedgeDFF:pipo10bit_dff_array[9].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator
+new_in_i[0] => new_in_i[0].IN1
+new_in_i[1] => new_in_i[1].IN1
+new_in_i[2] => new_in_i[2].IN1
+new_in_i[3] => new_in_i[3].IN1
+new_in_i[4] => new_in_i[4].IN1
+new_in_i[5] => new_in_i[5].IN1
+new_in_i[6] => new_in_i[6].IN1
+new_in_i[7] => new_in_i[7].IN1
+new_in_i[8] => new_in_i[8].IN1
+new_in_i[9] => new_in_i[9].IN1
+new_in_i[10] => new_in_i[10].IN1
+new_in_i[11] => new_in_i[11].IN1
+new_in_i[12] => new_in_i[12].IN1
+new_in_i[13] => new_in_i[13].IN1
+new_in_i[14] => new_in_i[14].IN1
+new_in_i[15] => new_in_i[15].IN1
+acc_clk_i => acc_clk_i.IN1
+acc_nreset_i => acc_nreset_i.IN1
+sel_i => sel_i.IN1
+acc_result_o[0] <= acc_result_o[0].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[1] <= acc_result_o[1].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[2] <= acc_result_o[2].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[3] <= acc_result_o[3].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[4] <= acc_result_o[4].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[5] <= acc_result_o[5].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[6] <= acc_result_o[6].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[7] <= acc_result_o[7].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[8] <= acc_result_o[8].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[9] <= acc_result_o[9].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[10] <= acc_result_o[10].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[11] <= acc_result_o[11].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[12] <= acc_result_o[12].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[13] <= acc_result_o[13].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[14] <= acc_result_o[14].DB_MAX_OUTPUT_PORT_TYPE
+acc_result_o[15] <= acc_result_o[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder
+a16_i[0] => a16_i[0].IN1
+a16_i[1] => a16_i[1].IN1
+a16_i[2] => a16_i[2].IN1
+a16_i[3] => a16_i[3].IN1
+a16_i[4] => a16_i[4].IN1
+a16_i[5] => a16_i[5].IN1
+a16_i[6] => a16_i[6].IN1
+a16_i[7] => a16_i[7].IN1
+a16_i[8] => a16_i[8].IN1
+a16_i[9] => a16_i[9].IN1
+a16_i[10] => a16_i[10].IN1
+a16_i[11] => a16_i[11].IN1
+a16_i[12] => a16_i[12].IN1
+a16_i[13] => a16_i[13].IN1
+a16_i[14] => a16_i[14].IN1
+a16_i[15] => a16_i[15].IN1
+b16_i[0] => b16_i[0].IN1
+b16_i[1] => b16_i[1].IN1
+b16_i[2] => b16_i[2].IN1
+b16_i[3] => b16_i[3].IN1
+b16_i[4] => b16_i[4].IN1
+b16_i[5] => b16_i[5].IN1
+b16_i[6] => b16_i[6].IN1
+b16_i[7] => b16_i[7].IN1
+b16_i[8] => b16_i[8].IN1
+b16_i[9] => b16_i[9].IN1
+b16_i[10] => b16_i[10].IN1
+b16_i[11] => b16_i[11].IN1
+b16_i[12] => b16_i[12].IN1
+b16_i[13] => b16_i[13].IN1
+b16_i[14] => b16_i[14].IN1
+b16_i[15] => b16_i[15].IN1
+cin16_i => carry[0].IN1
+sum16_o[0] <= SingleBitFA:fa_array_16bit[0].fa_inst.sum_o
+sum16_o[1] <= SingleBitFA:fa_array_16bit[1].fa_inst.sum_o
+sum16_o[2] <= SingleBitFA:fa_array_16bit[2].fa_inst.sum_o
+sum16_o[3] <= SingleBitFA:fa_array_16bit[3].fa_inst.sum_o
+sum16_o[4] <= SingleBitFA:fa_array_16bit[4].fa_inst.sum_o
+sum16_o[5] <= SingleBitFA:fa_array_16bit[5].fa_inst.sum_o
+sum16_o[6] <= SingleBitFA:fa_array_16bit[6].fa_inst.sum_o
+sum16_o[7] <= SingleBitFA:fa_array_16bit[7].fa_inst.sum_o
+sum16_o[8] <= SingleBitFA:fa_array_16bit[8].fa_inst.sum_o
+sum16_o[9] <= SingleBitFA:fa_array_16bit[9].fa_inst.sum_o
+sum16_o[10] <= SingleBitFA:fa_array_16bit[10].fa_inst.sum_o
+sum16_o[11] <= SingleBitFA:fa_array_16bit[11].fa_inst.sum_o
+sum16_o[12] <= SingleBitFA:fa_array_16bit[12].fa_inst.sum_o
+sum16_o[13] <= SingleBitFA:fa_array_16bit[13].fa_inst.sum_o
+sum16_o[14] <= SingleBitFA:fa_array_16bit[14].fa_inst.sum_o
+sum16_o[15] <= SingleBitFA:fa_array_16bit[15].fa_inst.sum_o
+cout16_o <= SingleBitFA:fa_array_16bit[15].fa_inst.cout_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[0].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[1].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[2].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[3].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[4].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[5].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[6].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[7].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[8].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[9].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[10].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[11].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[12].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[13].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[14].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|Adder16Bit:main_adder|SingleBitFA:fa_array_16bit[15].fa_inst
+a_i => sum_o.IN0
+a_i => cout_o.IN0
+a_i => cout_o.IN0
+b_i => sum_o.IN1
+b_i => cout_o.IN1
+b_i => cout_o.IN0
+cin_i => sum_o.IN1
+cin_i => cout_o.IN1
+cin_i => cout_o.IN1
+sum_o <= sum_o.DB_MAX_OUTPUT_PORT_TYPE
+cout_o <= cout_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register
+pdi_i[0] => comb.IN0
+pdi_i[1] => comb.IN0
+pdi_i[2] => comb.IN0
+pdi_i[3] => comb.IN0
+pdi_i[4] => comb.IN0
+pdi_i[5] => comb.IN0
+pdi_i[6] => comb.IN0
+pdi_i[7] => comb.IN0
+pdi_i[8] => comb.IN0
+pdi_i[9] => comb.IN0
+pdi_i[10] => comb.IN0
+pdi_i[11] => comb.IN0
+pdi_i[12] => comb.IN0
+pdi_i[13] => comb.IN0
+pdi_i[14] => comb.IN0
+pdi_i[15] => comb.IN0
+reg_clk_i => reg_clk_i.IN16
+reg_nreset_i => reg_nreset_i.IN16
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdi_sel_i => comb.IN1
+pdo_o[0] <= PosedgeDFF:pipo16bit_dff_array[0].dff_inst.q_o
+pdo_o[1] <= PosedgeDFF:pipo16bit_dff_array[1].dff_inst.q_o
+pdo_o[2] <= PosedgeDFF:pipo16bit_dff_array[2].dff_inst.q_o
+pdo_o[3] <= PosedgeDFF:pipo16bit_dff_array[3].dff_inst.q_o
+pdo_o[4] <= PosedgeDFF:pipo16bit_dff_array[4].dff_inst.q_o
+pdo_o[5] <= PosedgeDFF:pipo16bit_dff_array[5].dff_inst.q_o
+pdo_o[6] <= PosedgeDFF:pipo16bit_dff_array[6].dff_inst.q_o
+pdo_o[7] <= PosedgeDFF:pipo16bit_dff_array[7].dff_inst.q_o
+pdo_o[8] <= PosedgeDFF:pipo16bit_dff_array[8].dff_inst.q_o
+pdo_o[9] <= PosedgeDFF:pipo16bit_dff_array[9].dff_inst.q_o
+pdo_o[10] <= PosedgeDFF:pipo16bit_dff_array[10].dff_inst.q_o
+pdo_o[11] <= PosedgeDFF:pipo16bit_dff_array[11].dff_inst.q_o
+pdo_o[12] <= PosedgeDFF:pipo16bit_dff_array[12].dff_inst.q_o
+pdo_o[13] <= PosedgeDFF:pipo16bit_dff_array[13].dff_inst.q_o
+pdo_o[14] <= PosedgeDFF:pipo16bit_dff_array[14].dff_inst.q_o
+pdo_o[15] <= PosedgeDFF:pipo16bit_dff_array[15].dff_inst.q_o
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[0].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[1].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[2].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[3].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[4].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[5].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[6].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[7].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[8].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[9].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[10].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[11].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[12].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[13].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[14].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGAMAC|MulAndAcc:main_mac|Accumulator16Bit:main_accumulator|RegisterPIPO16Bit:main_register|PosedgeDFF:pipo16bit_dff_array[15].dff_inst
+d_i => q_o~reg0.DATAIN
+enable_i => q_o~reg0.CLK
+nreset_i => q_o~reg0.ACLR
+q_o <= q_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

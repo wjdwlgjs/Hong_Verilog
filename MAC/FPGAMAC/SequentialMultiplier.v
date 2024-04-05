@@ -1,7 +1,3 @@
-`include "MAC/SubModules/Adders.v"
-`include "MAC/SubModules/Registers.v"
-`include "MAC/SubModules/Counter3Bit.v"
-
 module SequentialMultiplier(
     input [4:0] multiplicand_i,
     input [4:0] multiplier_i,
@@ -10,7 +6,8 @@ module SequentialMultiplier(
     
     output [9:0] mul_result_o, 
     output is_result_o,
-    output mul_fetching_input_o
+    output mul_fetching_input_o,
+    output [2:0] status_count_o
     );
     // {input fetching, bitwise ANDing multiplier digit and multiplicand, and addition} is done on rising edge clk
     // partial sum register update is done on clk falling edge
@@ -28,6 +25,7 @@ module SequentialMultiplier(
     wire [2:0] count;
     wire modulo_not_reached; 
     wire count_iszero;
+    assign status_count_o = count;
 
     assign modulo_not_reached = ~(count[2] & count[1] & ~count[0]); // create a short falling pulse signal when count == 6, resetting everything including the counter
     assign count_isnotzero = count[2] | count[1] | count[0];
